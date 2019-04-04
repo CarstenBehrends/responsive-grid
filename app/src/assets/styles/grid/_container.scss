@@ -1,0 +1,77 @@
+.row {
+  width: auto;
+  margin-left: $gutter-horizontal * -1;
+  margin-right: $gutter-horizontal * -1;
+}
+
+.container {
+  width: $container-width-xs;
+  margin: $container-margin-xs;
+
+  @for $i from 1 through length($breakpoint-up-prefixes) {
+    $thisPrefix: nth($breakpoint-up-prefixes, $i);
+    @if $thisPrefix == "xs" {
+    } @else if $thisPrefix == "ms" {
+      @media #{$breakpoint-ms-up} {
+        width: $container-width-ms;
+        margin: $container-margin-ms;
+      }
+    } @else if $thisPrefix == "sm" {
+      @media #{$breakpoint-sm-up} {
+        width: $container-width-sm;
+        margin: $container-margin-sm;
+      }
+    } @else if $thisPrefix == "md" {
+      @media #{$breakpoint-md-up} {
+        width: $container-width-md;
+        margin: $container-margin-md;
+      }
+    } @else if $thisPrefix == "lg" {
+      @media #{$breakpoint-lg-up} {
+        width: $container-width-lg;
+        margin: $container-margin-lg;
+      }
+    } @else if $thisPrefix == "xl" {
+      @media #{$breakpoint-xl-up} {
+        width: $container-width-xl;
+        margin: $container-margin-xl;
+      }
+    }
+  }
+}
+
+.container-narrow {
+  width: $container-narrow-width-xs;
+  margin: $container-narrow-margin-xs;
+
+  @for $i from 1 through length($breakpoint-up-prefixes) {
+    $thisPrefix: nth($breakpoint-up-prefixes, $i);
+    @if $thisPrefix == "xs" {
+    } @else if $thisPrefix == "ms" {
+      @media #{$breakpoint-ms-up} {
+        width: $container-narrow-width-ms;
+        margin: $container-narrow-margin-ms;
+      }
+    } @else if $thisPrefix == "sm" {
+      @media #{$breakpoint-sm-up} {
+        width: $container-narrow-width-sm;
+        margin: $container-narrow-margin-sm;
+      }
+    } @else if $thisPrefix == "md" {
+      @media #{$breakpoint-md-up} {
+        width: $container-narrow-width-md;
+        margin: $container-narrow-margin-md;
+      }
+    } @else if $thisPrefix == "lg" {
+      @media #{$breakpoint-lg-up} {
+        width: $container-narrow-width-lg;
+        margin: $container-narrow-margin-lg;
+      }
+    } @else if $thisPrefix == "xl" {
+      @media #{$breakpoint-xl-up} {
+        width: $container-narrow-width-xl;
+        margin: $container-narrow-margin-xl;
+      }
+    }
+  }
+}

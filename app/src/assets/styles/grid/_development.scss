@@ -1,0 +1,42 @@
+.development {
+  $dev_colors: rgb(184, 173, 173) rgb(151, 177, 151) rgb(130, 130, 155) rgb(167, 167, 111) rgb(187, 143, 187)
+    rgb(142, 179, 179) rgb(179, 162, 142) rgb(184, 173, 173) rgb(151, 177, 151) rgb(130, 130, 155) rgb(167, 167, 111)
+    rgb(187, 143, 187) rgb(142, 179, 179) rgb(179, 162, 142);
+
+  .container {
+    background-color: rgba(0, 155, 155, 0.158);
+  }
+
+  .row {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+
+  @for $i from 1 through length($dev_colors) {
+    [class*="col"]:nth-child(#{$i}) {
+      position: relative;
+      min-height: 50px;
+      background: nth($dev_colors, $i);
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        // border: 1px solid rgb(44, 50, 139);
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: $gutter-vertical;
+        left: $gutter-horizontal;
+        right: $gutter-horizontal;
+        bottom: $gutter-vertical;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: 1px solid cyan;
+      }
+    }
+  }
+}
